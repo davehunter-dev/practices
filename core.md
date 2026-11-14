@@ -66,6 +66,8 @@ suppressed, and no check is weakened to merge.
 For a new repository, or a new component where `AGENTS.md` doesn't decide:
 - **Web:** Next.js and TypeScript.
 - **Native iOS and macOS:** Swift, with SwiftUI.
+- **Native Android:** Kotlin, with Jetpack Compose, as the `android` skill
+  describes.
 - **Portable components shared across platforms:** C++, owning the model and
   rules, with each platform's UI a thin layer over it.
 - **Tooling:** the language the area already uses. No new language without the
@@ -73,6 +75,16 @@ For a new repository, or a new component where `AGENTS.md` doesn't decide:
 
 Existing code follows its established architecture, and a default never
 authorizes a rewrite. A repository that wants to move says so in `AGENTS.md`.
+
+## Parity across platforms
+
+Where one product has more than one platform implementation, a new one starts
+from the established one's ownership, threading, state flow, lifecycle and
+boundaries, using each platform's own APIs rather than porting code. A
+difference needs a concrete platform constraint or a demonstrated benefit, not
+a different language or framework. Parity runs both ways: when the new platform
+shows a simpler shape, propose changing the established one rather than
+preserving the worse precedent.
 
 ## Significant UI
 
